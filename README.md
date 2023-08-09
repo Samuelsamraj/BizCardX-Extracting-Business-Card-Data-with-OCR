@@ -1,45 +1,52 @@
-BizCardX-Extracting_Business_Card_Data_with_OCR
+# BizCardX - Extracting Business Card Data with OCR
 
-What is EasyOCR?
+BizCardX is a user-friendly tool for extracting information from business cards using Optical Character Recognition (OCR) technology. This project leverages the EasyOCR library to recognize text on business cards and extracts the data into a SQL database after classification using regular expressions. The extracted information is then accessible through a GUI built using Streamlit. The BizCardX application provides an intuitive interface for users to upload business card images, extract information, and manage the data within a database.
 
-EasyOCR, as the name suggests, is a Python package that allows computer vision developers to effortlessly perform Optical Character Recognition.It is a Python library for Optical Character Recognition (OCR) that allows you to easily extract text from images and scanned documents. In my project I am using easyOCR to extract text from business cards.
+## Project Overview
 
-When it comes to OCR, EasyOCR is by far the most straightforward way to apply Optical Character Recognition:
+BizCardX aims to simplify the process of extracting and managing information from business cards. The tool offers the following features:
 
-The EasyOCR package can be installed with a single pip command.
-The dependencies on the EasyOCR package are minimal, making it easy to configure your OCR development environment.
-Once EasyOCR is installed, only one import statement is required to import the package into your project.
-From there, all you need is two lines of code to perform OCR — one to initialize the Reader class and then another to OCR the image via the readtext function.
+- Extraction of key information from business cards: company name, cardholder name, designation, contact details, etc.
+- Storage of extracted data in a MySQL database for easy access and retrieval.
+- GUI built with Streamlit for a user-friendly interface.
+- User options to upload, extract, and modify business card data.
 
-Project Overview
+## Libraries/Modules Used
 
-BizCardX is a user-friendhttps://translate.google.com/ly tool for extracting information from business cards. The tool uses OCR technology to recognize text on business cards and extracts the data into a SQL database after classification using regular expressions. Users can access the extracted information using a GUI built using streamlit. The BizCardX application is a simple and intuitive user interface that guides users through the process of uploading the business card image and extracting its information. The extracted information would be displayed in a clean and organized manner, and users would be able to easily add it to the database with the click of a button. Further the data stored in database can be easily Read, updated and deleted by user as per the requirement.
+- `pandas`: Used to create DataFrames for data manipulation and storage.
+- `mysql.connector`: Used to store and retrieve data from a MySQL database.
+- `streamlit`: Used to create a graphical user interface for users.
+- `easyocr`: Used for text extraction from business card images.
 
-Libraries/Modules used for the project!
+## Workflow
 
-* Pandas - (To Create a DataFrame with the scraped data)
-* mysql.connector - (To store and retrieve the data)
-* Streamlit - (To Create Graphical user Interface)
-* EasyOCR - (To extract text from images)
+1. Install the required libraries using the command `pip install [Name of the library]`. Install `streamlit`, `mysql.connector`, `pandas`, and `easyocr`.
+2. Execute the `BizCardX_main.py` script using the command `streamlit run BizCardX_main.py`.
+3. The web application opens in a browser, presenting the user with three menu options: HOME, UPLOAD & EXTRACT, MODIFY.
+4. Users can upload a business card image in the UPLOAD & EXTRACT menu.
+5. The EasyOCR library extracts text from the uploaded image.
+6. Extracted text is classified using regular expressions to identify key information such as company name, cardholder name, etc.
+7. The classified data is displayed on the screen and can be edited by the user if needed.
+8. Clicking the "Upload to Database" button stores the data in a MySQL database.
+9. The MODIFY menu allows users to read, update, and delete data in the MySQL database.
 
-Workflow
+## How to Use
 
-To get started with BizCardX Data Extraction, follow the steps below:
+1. Clone this repository.
+2. Install the required libraries using the `pip install` command.
+3. Set up your MySQL database credentials in the appropriate places in your script.
+4. Run the script `BizCardX_main.py` using the `streamlit run` command.
+5. Use the web interface to upload business card images, extract information, and manage the data.
 
-Install the required libraries using the pip install command. Streamlit, mysql.connector, pandas, easyocr.
+## Screenshots
 
-pip install [Name of the library]
-Execute the “BizCardX_main.py” using the streamlit run command.
+Insert relevant screenshots of your application's interface and data extraction here.
 
-streamlit run BizCardX_main.py
-A webpage is displayed in browser, I have created the app with three menu options namely HOME, UPLOAD & EXTRACT, MODIFY where user has the option to upload the respective Business Card whose information has to be extracted, stored, modified or deleted if needed.
+## Acknowledgements
 
-Once user uploads a business card, the text present in the card is extracted by easyocr library.
+- [EasyOCR Documentation](https://github.com/JaidedAI/EasyOCR)
+- [Python `pandas` documentation](https://pandas.pydata.org/docs/)
+- [Python `mysql-connector` documentation](https://dev.mysql.com/doc/connector-python/en/)
+- [Streamlit Documentation](https://docs.streamlit.io/)
 
-The extracted text is sent to get_data() function(user defined- I have coded this function) for respective text classification as company name, card holder name, designation, mobile number, email address, website URL, area, city, state, and pin code using loops and some regular expression.
-
-The classified data is displayed on screen which can be further edited by user based on requirement.
-
-On Clicking Upload to Database Button the data gets stored in the MySQL Database. (Note: Provide respective host, user, password, database name in create_database, sql_table_creation and connect_database for establishing connection.)
-
-Further with the help of MODIFY menu the uploaded data’s in SQL Database can be accessed for Read, Update and Delete Operations.
+Feel free to contribute, report issues, or fork this repository.
