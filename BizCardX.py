@@ -197,7 +197,7 @@ if selected == "Image":
     else:
         st.write("Upload an image")
 if selected == "Contact":
-    name = "Karthik_Tnj"
+    name = "Samuel samraj"
     mail = (f'{"Mail :"}  {"morlensamuels@gmail.com"}')
     description = "An Aspiring DATA-SCIENTIST..!"
     social_media = {
